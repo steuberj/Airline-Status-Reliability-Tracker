@@ -3,11 +3,11 @@ import requests
 
 BASE_URL = "https://api.openweathermap.org/data/2.5/weather?"
 API_KEY = "0cfa51bc6259fabaaac26fb124b89437"
-CITY = "Miami"
+CITY = "Tallahassee"
 
 def kelvin_to_celsius_fahrenheit(kelvin):
-    celsius = kelvin - 273.15
-    fahrenhiet = celsius * (9/5) + 32
+    celsius = round(kelvin - 273.15)
+    fahrenhiet = round(celsius * (9/5) + 32)
     return celsius, fahrenhiet
 
 url = BASE_URL + "appid=" + API_KEY + "&q=" + CITY
