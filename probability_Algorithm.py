@@ -48,5 +48,5 @@ flightDelay_preprocessing = tf.keras.Model(inputData, preprocessed_inputs_cat)
 #tf.keras.utils.plot_model(model = flightDelay_preprocessing , rankdir="LR", dpi=72, show_shapes=True)
 
 modelDataCopy_dict = {name: np.array(value) for name, value in modelDataCopy.items()}
-
+#print(modelDataCopy_dict)
 copy_dict = {name:values[:1] for name, values in modelDataCopy_dict.items()}
