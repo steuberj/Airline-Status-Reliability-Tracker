@@ -65,9 +65,22 @@ normalized_arr = (data_arr - np.min(data_arr)) / (np.max(data_arr) - np.min(data
 print(normalized_arr)
 normalized_arr_labels = (arr_labels - np.min(arr_labels)) / (np.max(arr_labels) - np.min(arr_labels))
 
+def initial_training_function():
+  flightDelay_model = tf.keras.Sequential([layers.Dense(16), layers.Dense(60), layers.Dense(60), layers.Dense(1)])
 
-flightDelay_model = tf.keras.Sequential([layers.Dense(16), layers.Dense(60), layers.Dense(60), layers.Dense(1)])
+  flightDelay_model.compile(loss=tf.keras.losses.BinaryCrossentropy(from_logits=True), optimizer=tf.keras.optimizers.Adam())
 
-flightDelay_model.compile(loss=tf.keras.losses.BinaryCrossentropy(from_logits=True), optimizer=tf.keras.optimizers.Adam())
+  flightDelay_model.fit(x=normalized_arr, y=normalized_arr_labels, epochs=20)
 
-flightDelay_model.fit(x=normalized_arr, y=normalized_arr_labels, epochs=20)
+  flightDelay_model.save('test.keras')
+
+def loaded_training_function():
+  loaded_model = tf.keras.models.load_model('test.keras')
+  acc = loaded_model.evaluate(normalized_arr, normalized_arr_labels, verbose=2)
+  while((acc*100)>=35):
+    loaded_model = tf.keras.models.load_model('test.keras')
+    acc = loaded_model.evaluate(normalized_arr, normalized_arr_labels, verbose=2)
+    loaded_model.fit(x=normalized_arr, y=normalized_arr_labels, epochs=20)
+    loaded_model.save('test.keras')
+    print(acc)
+    print('Restored model, accuracy: {:5.2f}%'.format(100 * acc))
