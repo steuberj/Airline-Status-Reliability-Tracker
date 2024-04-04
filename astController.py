@@ -1,7 +1,7 @@
 import read_write_data as rwd
 import probability_Algorithm as pa
 
-print("AST Controller/n")
+print("AST Controller\n")
 
 user_input = input("\nEnter (d) for Development Mode or (u) User Mode.\n")
 
