@@ -21,6 +21,3 @@ def modifyCSV():
                 del line['airport']
 
                 csv_writer.writerow(line)
-
-modifyCSV()
-print("Complete")
