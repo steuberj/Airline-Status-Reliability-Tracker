@@ -55,32 +55,32 @@ copy_dict = {name:values[:1] for name, values in modelDataCopy_dict.items()}
 flightDelay_preprocessing(copy_dict)
 
 '''
+def initial_training_function(newhistoricaldata, modelsavename):
+  historical_data = pd.read_csv(newhistoricaldata + '.csv')
+  arr_labels = historical_data.pop('weather_delay')
+  data_arr = np.array(historical_data)
+  arr_labels = np.array(arr_labels)
+  print(data_arr)
+  normalized_arr = (data_arr - np.min(data_arr)) / (np.max(data_arr) - np.min(data_arr))
+  print(normalized_arr)
+  normalized_arr_labels = (arr_labels - np.min(arr_labels)) / (np.max(arr_labels) - np.min(arr_labels))
+  print(normalized_arr_labels)
 
-historical_data = pd.read_csv('Airline_Delay_Cause_No_Extra_Info.csv')
-arr_labels = historical_data.pop('weather_delay')
-data_arr = np.array(historical_data)
-arr_labels = np.array(arr_labels)
-print(data_arr)
-normalized_arr = (data_arr - np.min(data_arr)) / (np.max(data_arr) - np.min(data_arr))
-print(normalized_arr)
-normalized_arr_labels = (arr_labels - np.min(arr_labels)) / (np.max(arr_labels) - np.min(arr_labels))
-print(normalized_arr_labels)
 
-def initial_training_function():
   flightDelay_model = tf.keras.Sequential([layers.Dense(20), layers.Dense(80), layers.Dense(80), layers.Dense(1)])
 
   flightDelay_model.compile(loss=tf.keras.losses.BinaryCrossentropy(from_logits=True), metrics=["accuracy"],optimizer=tf.keras.optimizers.Adam())
 
   flightDelay_model.fit(x=normalized_arr, y=normalized_arr_labels, epochs=20)
 
-  flightDelay_model.save('test.keras')
+  flightDelay_model.save(modelsavename + '.keras')
 
-def loaded_training_function():
-  loaded_model = tf.keras.models.load_model('test.keras')
+#def loaded_training_function(modelsavename):
+  loaded_model = tf.keras.models.load_model(modelsavename + '.keras')
   loss, acc = loaded_model.evaluate(normalized_arr, normalized_arr_labels, verbose=2)
   print(loss)
-  while(acc <= 0.8):
-    loaded_model = tf.keras.models.load_model('test.keras')
+  while(acc <= 0.0039):
+    loaded_model = tf.keras.models.load_model(modelsavename + '.keras')
     loss, acc = loaded_model.evaluate(normalized_arr, normalized_arr_labels, verbose=2)
     loaded_model.fit(x=normalized_arr, y=normalized_arr_labels, epochs=20)
     loaded_model.save('test.keras')

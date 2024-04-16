@@ -23,7 +23,15 @@ if(user_input.lower() == "d"):
     ask_q = input("\nRun data preprocessing? (y/n)\n")
     if(ask_q.lower() == "y"):
         print("Running...")
-        rwd.modifyCSV
+        rwd.modifyCSV('Airline_Delay_Cause_DLJAX','New_Airline_Delay_Cause_DLJAX')
+        rwd.modifyCSV('Airline_Delay_Cause_DLMCO','New_Airline_Delay_Cause_DLMCO')
+        rwd.modifyCSV('Airline_Delay_Cause_DLMIA','New_Airline_Delay_Cause_DLMIA')
+        rwd.modifyCSV('Airline_Delay_Cause_AAJAX','New_Airline_Delay_Cause_AAJAX')
+        rwd.modifyCSV('Airline_Delay_Cause_AAMCO','New_Airline_Delay_Cause_AAMCO')
+        rwd.modifyCSV('Airline_Delay_Cause_AAMIA','New_Airline_Delay_Cause_AAMIA')
+        rwd.modifyCSV('Airline_Delay_Cause_SWJAX','New_Airline_Delay_Cause_SWJAX')
+        rwd.modifyCSV('Airline_Delay_Cause_SWMCO','New_Airline_Delay_Cause_SWMCO')
+        rwd.modifyCSV('Airline_Delay_Cause_SWMIA','New_Airline_Delay_Cause_SWMIA')
         print("Complete.")
     else:
         pass
@@ -31,8 +39,16 @@ if(user_input.lower() == "d"):
     ask_q = input("\nInitialize Model Training? (y/n)\n")
     if(ask_q.lower() == "y"):
         print("Initializing...")
-        pa.initial_training_function()
-        pa.loaded_training_function()
+        pa.initial_training_function('New_Airline_Delay_Cause_DLJAX', 'DLJAX_model')
+        pa.initial_training_function('New_Airline_Delay_Cause_DLMCO', 'DLMCO_model')
+        pa.initial_training_function('New_Airline_Delay_Cause_DLMIA', 'DLMIA_model')
+        pa.initial_training_function('New_Airline_Delay_Cause_AAJAX', 'AAJAX_model')
+        pa.initial_training_function('New_Airline_Delay_Cause_AAMCO', 'AAMCO_model')
+        pa.initial_training_function('New_Airline_Delay_Cause_AAMIA', 'AAMIA_model')
+        pa.initial_training_function('New_Airline_Delay_Cause_SWJAX', 'SWJAX_model')
+        pa.initial_training_function('New_Airline_Delay_Cause_SWMCO', 'SWMCO_model')
+        pa.initial_training_function('New_Airline_Delay_Cause_SWMIA', 'SWMIA_model')
+        #pa.loaded_training_function()
     else:
         pass
 
