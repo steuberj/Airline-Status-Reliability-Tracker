@@ -60,6 +60,14 @@ if(user_input.lower() == "d"):
     else:
         pass
 
+    ask_q = input("\nCheck Flight Data? (y/n)\n")
+    if(ask_q.lower() == "y"):
+        print("Running...")
+        fapi.flightdata()
+        print("Complete.")
+    else:
+        pass
+
 elif(user_input.lower() == "u"):
     print("In User Mode")
 
