@@ -40,14 +40,23 @@ if(user_input.lower() == "d"):
     if(ask_q.lower() == "y"):
         print("Initializing...")
         pa.initial_training_function('New_Airline_Delay_Cause_DLJAX', 'DLJAX_model')
+        print("1")
         pa.initial_training_function('New_Airline_Delay_Cause_DLMCO', 'DLMCO_model')
+        print("2")
         pa.initial_training_function('New_Airline_Delay_Cause_DLMIA', 'DLMIA_model')
+        print("3")
         pa.initial_training_function('New_Airline_Delay_Cause_AAJAX', 'AAJAX_model')
+        print("4")
         pa.initial_training_function('New_Airline_Delay_Cause_AAMCO', 'AAMCO_model')
+        print("5")
         pa.initial_training_function('New_Airline_Delay_Cause_AAMIA', 'AAMIA_model')
+        print("6")
         pa.initial_training_function('New_Airline_Delay_Cause_SWJAX', 'SWJAX_model')
+        print("7")
         pa.initial_training_function('New_Airline_Delay_Cause_SWMCO', 'SWMCO_model')
+        print("8")
         pa.initial_training_function('New_Airline_Delay_Cause_SWMIA', 'SWMIA_model')
+        print("9")
         #pa.loaded_training_function()
     else:
         pass

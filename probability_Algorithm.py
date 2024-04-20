@@ -4,6 +4,7 @@ from keras import layers
 import numpy as np
 import pandas as pd
 
+
 '''
 
 np.set_printoptions(precision=3, suppress=True)
@@ -57,17 +58,17 @@ flightDelay_preprocessing(copy_dict)
 '''
 def initial_training_function(newhistoricaldata, modelsavename):
   historical_data = pd.read_csv(newhistoricaldata + '.csv')
-  arr_labels = historical_data.pop('weather_delay')
+  arr_labels = historical_data.pop('arr_del15') #Make a model for the total flights and total delayed flights and come up with a percentage value that determines if the flight will be delay based on the data and compare it to the current whether to verify.
   data_arr = np.array(historical_data)
-  arr_labels = np.array(arr_labels)
-  print(data_arr)
+  arr_labels2 = np.array(arr_labels)
+  #print(data_arr)
   normalized_arr = (data_arr - np.min(data_arr)) / (np.max(data_arr) - np.min(data_arr))
-  print(normalized_arr)
-  normalized_arr_labels = (arr_labels - np.min(arr_labels)) / (np.max(arr_labels) - np.min(arr_labels))
-  print(normalized_arr_labels)
+  #print(normalized_arr)
+  normalized_arr_labels = (arr_labels2 - np.min(arr_labels2)) / (np.max(arr_labels2) - np.min(arr_labels2))
+  #print(normalized_arr_labels)
 
 
-  flightDelay_model = tf.keras.Sequential([layers.Dense(20), layers.Dense(80), layers.Dense(80), layers.Dense(1)])
+  flightDelay_model = tf.keras.Sequential([layers.Dense(10), layers.Dense(60), layers.Dense(60), layers.Dense(1)])
 
   flightDelay_model.compile(loss=tf.keras.losses.BinaryCrossentropy(from_logits=True), metrics=["accuracy"],optimizer=tf.keras.optimizers.Adam())
 
@@ -78,16 +79,24 @@ def initial_training_function(newhistoricaldata, modelsavename):
 #def loaded_training_function(modelsavename):
   loaded_model = tf.keras.models.load_model(modelsavename + '.keras')
   loss, acc = loaded_model.evaluate(normalized_arr, normalized_arr_labels, verbose=2)
-  print(loss)
-  while(acc <= 0.0039):
+  #print(loss)
+  while(acc <= 0.0003):
     loaded_model = tf.keras.models.load_model(modelsavename + '.keras')
     loss, acc = loaded_model.evaluate(normalized_arr, normalized_arr_labels, verbose=2)
     loaded_model.fit(x=normalized_arr, y=normalized_arr_labels, epochs=20)
-    loaded_model.save('test.keras')
-    print('Restored model, accuracy: {:5.2f}%'.format(100 * acc))
+    loaded_model.save(modelsavename + '.keras')
+    #print('Restored model, accuracy: {:5.2f}%'.format(100 * acc))
   #print("Ready for Prediction.")
-  print(loss)
+  #print(loss)
 
+  final_model = tf.keras.models.load_model(modelsavename + '.keras')
+  result = final_model.predict(data_arr)
+  count = 0
+  for arr in result:
+    for inner_arr in arr:
+      count += abs(inner_arr)
+  count /= arr
+  print(abs(count))
 '''
 def prediction_function():
   input_data = pd.read_csv('Book1.csv')
@@ -95,6 +104,3 @@ def prediction_function():
   result = final_model.predict(input_data)
   
 '''
-#initial_training_function()
-#loaded_training_function()
-#prediction_function()

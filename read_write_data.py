@@ -6,9 +6,8 @@ def modifyCSV(orginfilename, newfilename):
         csv_reader = csv.DictReader(csv_file)
 
         with open (newfilename + '.csv', 'w', newline = '') as file:
-            reqCol = ["arr_del15", "carrier_ct", "security_delay", "arr_flights", "carrier_delay", "arr_diverted",
-                  "weather_ct", "security_ct", "nas_ct", "arr_cancelled", "late_aircraft_ct",
-                  "arr_delay", "weather_delay", "nas_delay", "late_aircraft_delay"]
+            reqCol = ["arr_flights", "security_ct", "carrier_ct", "arr_cancelled", "arr_diverted",
+                  "arr_del15", "weather_ct", "nas_ct", "late_aircraft_ct"]
             csv_writer = csv.DictWriter(file, fieldnames = reqCol)
             csv_writer.writeheader()
             for line in csv_reader:
@@ -19,5 +18,11 @@ def modifyCSV(orginfilename, newfilename):
                 del line['airport_name']
                 del line['carrier']
                 del line['airport']
+                del line['arr_delay']
+                del line['carrier_delay']
+                del line['weather_delay']
+                del line['security_delay']
+                del line['nas_delay']
+                del line ['late_aircraft_delay']
 
                 csv_writer.writerow(line)
