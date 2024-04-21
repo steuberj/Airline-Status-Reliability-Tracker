@@ -1,4 +1,3 @@
-import datetime as datetime
 import requests
 
 def weatherCheck(cityName):
