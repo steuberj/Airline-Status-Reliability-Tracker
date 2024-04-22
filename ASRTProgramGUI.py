@@ -7,7 +7,7 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
-
+import Logos_rc, Icons_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -284,29 +284,14 @@ class Ui_MainWindow(object):
         self.AALogo = QtWidgets.QLabel(parent=self.airlineLogos)
         self.AALogo.setGeometry(QtCore.QRect(0, 148, 60, 60))
         self.AALogo.setObjectName("AALogo")
-        self.launchPageTime = QtWidgets.QTimeEdit(parent=self.LPageFrame)
-        self.launchPageTime.setGeometry(QtCore.QRect(10, 430, 151, 41))
-        self.launchPageTime.setReadOnly(True)
-        self.launchPageTime.setButtonSymbols(QtWidgets.QAbstractSpinBox.ButtonSymbols.NoButtons)
-        self.launchPageTime.setDate(QtCore.QDate(2024, 4, 7))
-        self.launchPageTime.setCurrentSection(QtWidgets.QDateTimeEdit.Section.HourSection)
-        self.launchPageTime.setCalendarPopup(False)
-        self.launchPageTime.setObjectName("launchPageTime")
-        self.launchPageDate = QtWidgets.QDateEdit(parent=self.LPageFrame)
-        self.launchPageDate.setGeometry(QtCore.QRect(180, 430, 151, 41))
-        self.launchPageDate.setLayoutDirection(QtCore.Qt.LayoutDirection.LeftToRight)
-        self.launchPageDate.setReadOnly(True)
-        self.launchPageDate.setButtonSymbols(QtWidgets.QAbstractSpinBox.ButtonSymbols.NoButtons)
-        self.launchPageDate.setTime(QtCore.QTime(12, 0, 0))
-        self.launchPageDate.setObjectName("launchPageDate")
         self.horizontalLayoutWidget = QtWidgets.QWidget(parent=self.LPageFrame)
-        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(500, 430, 161, 41))
+        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(430, 430, 301, 41))
         self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
         self.LtoRPageButtonLayout = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
         self.LtoRPageButtonLayout.setContentsMargins(0, 0, 0, 0)
         self.LtoRPageButtonLayout.setObjectName("LtoRPageButtonLayout")
         self.LtoRPageButton = QtWidgets.QPushButton(parent=self.horizontalLayoutWidget)
-        self.LtoRPageButton.setEnabled(False)
+        self.LtoRPageButton.setEnabled(True)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -350,21 +335,6 @@ class Ui_MainWindow(object):
         self.RPageFrame.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.RPageFrame.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.RPageFrame.setObjectName("RPageFrame")
-        self.resultsPageTime = QtWidgets.QTimeEdit(parent=self.RPageFrame)
-        self.resultsPageTime.setGeometry(QtCore.QRect(10, 430, 151, 41))
-        self.resultsPageTime.setReadOnly(True)
-        self.resultsPageTime.setButtonSymbols(QtWidgets.QAbstractSpinBox.ButtonSymbols.NoButtons)
-        self.resultsPageTime.setDate(QtCore.QDate(2024, 4, 7))
-        self.resultsPageTime.setCurrentSection(QtWidgets.QDateTimeEdit.Section.HourSection)
-        self.resultsPageTime.setCalendarPopup(False)
-        self.resultsPageTime.setObjectName("resultsPageTime")
-        self.resultsPageDate = QtWidgets.QDateEdit(parent=self.RPageFrame)
-        self.resultsPageDate.setGeometry(QtCore.QRect(180, 430, 151, 41))
-        self.resultsPageDate.setLayoutDirection(QtCore.Qt.LayoutDirection.LeftToRight)
-        self.resultsPageDate.setReadOnly(True)
-        self.resultsPageDate.setButtonSymbols(QtWidgets.QAbstractSpinBox.ButtonSymbols.NoButtons)
-        self.resultsPageDate.setTime(QtCore.QTime(12, 0, 0))
-        self.resultsPageDate.setObjectName("resultsPageDate")
         self.resultsPageLine = QtWidgets.QFrame(parent=self.RPageFrame)
         self.resultsPageLine.setGeometry(QtCore.QRect(0, 60, 780, 20))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Fixed, QtWidgets.QSizePolicy.Policy.Fixed)
@@ -389,7 +359,7 @@ class Ui_MainWindow(object):
         self.resultsPageScrollArea.setWidgetResizable(True)
         self.resultsPageScrollArea.setObjectName("resultsPageScrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 742, 476))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 181, 476))
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
@@ -574,13 +544,13 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.addLayout(self.gridLayout)
         self.resultsPageScrollArea.setWidget(self.scrollAreaWidgetContents)
         self.horizontalLayoutWidget_5 = QtWidgets.QWidget(parent=self.RPageFrame)
-        self.horizontalLayoutWidget_5.setGeometry(QtCore.QRect(500, 430, 161, 41))
+        self.horizontalLayoutWidget_5.setGeometry(QtCore.QRect(430, 430, 301, 41))
         self.horizontalLayoutWidget_5.setObjectName("horizontalLayoutWidget_5")
         self.RtoLPageButtonLayout = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_5)
         self.RtoLPageButtonLayout.setContentsMargins(0, 0, 0, 0)
         self.RtoLPageButtonLayout.setObjectName("RtoLPageButtonLayout")
         self.RtoLPageButton = QtWidgets.QPushButton(parent=self.horizontalLayoutWidget_5)
-        self.RtoLPageButton.setEnabled(False)
+        self.RtoLPageButton.setEnabled(True)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -611,16 +581,16 @@ class Ui_MainWindow(object):
         self.MCOButton.setText(_translate("MainWindow", "Orlando (MCO)"))
         self.MIAButton.setText(_translate("MainWindow", "Miami (MIA)"))
         self.JAXButton.setText(_translate("MainWindow", "Jacksonville (JAX)"))
-        self.MCOLogo.setText(_translate("MainWindow", "<html><head/><body><p><img src=\":/Airports/airport logos/MCO.png\"/></p></body></html>"))
-        self.MIALogo.setText(_translate("MainWindow", "<html><head/><body><p><img src=\":/Airports/airport logos/MIA.png\"/></p></body></html>"))
-        self.JAXLogo.setText(_translate("MainWindow", "<html><head/><body><p><img src=\":/Airports/airport logos/JAX.png\"/></p></body></html>"))
+        self.MCOLogo.setText(_translate("MainWindow", "<html><head/><body><p><img src=\":/Airlines&amp;Airports/airport logos/MCO.png\"/></p></body></html>"))
+        self.MIALogo.setText(_translate("MainWindow", "<html><head/><body><p><img src=\":/Airlines&amp;Airports/airport logos/MIA.png\"/></p></body></html>"))
+        self.JAXLogo.setText(_translate("MainWindow", "<html><head/><body><p><img src=\":/Airlines&amp;Airports/airport logos/JAX.png\"/></p></body></html>"))
         self.airlineSelection.setTitle(_translate("MainWindow", "Select an Airline"))
         self.SWButton.setText(_translate("MainWindow", "Southwest Airlines"))
         self.UAButton.setText(_translate("MainWindow", "United Airlines"))
         self.AAButton.setText(_translate("MainWindow", "American Airlines"))
-        self.SWLogo.setText(_translate("MainWindow", "<html><head/><body><p><img src=\":/Airlines/airline logos/Southwest.png\"/></p></body></html>"))
-        self.UALogo.setText(_translate("MainWindow", "<html><head/><body><p><img src=\":/Airlines/airline logos/United.png\"/></p></body></html>"))
-        self.AALogo.setText(_translate("MainWindow", "<html><head/><body><p><img src=\":/Airlines/airline logos/American.png\"/></p></body></html>"))
+        self.SWLogo.setText(_translate("MainWindow", "<html><head/><body><p><img src=\":/Airlines&amp;Airports/airline logos/Southwest.png\"/></p></body></html>"))
+        self.UALogo.setText(_translate("MainWindow", "<html><head/><body><p><img src=\":/Airlines&amp;Airports/airline logos/United.png\"/></p></body></html>"))
+        self.AALogo.setText(_translate("MainWindow", "<html><head/><body><p><img src=\":/Airlines&amp;Airports/airline logos/American.png\"/></p></body></html>"))
         self.LtoRPageButton.setText(_translate("MainWindow", "Predict"))
         self.LtoRPageButton.setShortcut(_translate("MainWindow", "Space"))
         self.launchPageTitle.setText(_translate("MainWindow", "LAUNCH PAGE"))
@@ -655,7 +625,6 @@ class Ui_MainWindow(object):
         self.RtoLPageButton.setText(_translate("MainWindow", "Return"))
         self.RtoLPageButton.setShortcut(_translate("MainWindow", "Space"))
 
-
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
@@ -663,4 +632,98 @@ if __name__ == "__main__":
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
     MainWindow.show()
+
+    # initialize airport/airline radio buttons to false (unselected)
+    airportButtonSelected = False
+    airlineButtonSelected = False
+
+    # ------------------------------- #
+    # index for airport and airlines. #
+    # 0 : NOTHING       0: NOTHING    #
+    # 1 : Southwest     1: Orlando    #
+    # 1 : United        1: Miami      #
+    # 3 : American      3: Jacksonv.  #
+    # ------------------------------- #
+    airportIndex = int(0)
+    airlineIndex = int(0)
+
+    ### debug point ###
+    #print("airport buttons set to:", airportButtonSelected)
+    #print("airline buttons set to:", airlineButtonSelected)
+
+    def LtoRPageButton_clicked():
+        # set the currentIndex of the stacked widget to 1
+        if airportButtons_clicked() and airlineButtons_clicked() == True:
+            ui.stackedWidget.setCurrentIndex(1)
+        
+        if (ui.MCOButton.isChecked):
+            airportIndex = 1
+        elif(ui.MIAButton.isChecked):
+            airportIndex = 2
+        elif(ui.JAXButton.isChecked):
+            airportIndex = 3
+        else: airportIndex = 0
+
+        if (ui.SWButton.isChecked):
+            airlineIndex = 1
+        elif(ui.UAButton.isChecked):
+            airlineIndex = 2
+        elif(ui.AAButton.isChecked):
+            airlineIndex = 3
+        else: airlineIndex = 0
+
+        print("airline id:", airlineIndex)
+
+        print("airport id:", airportIndex)
+
+
+    def RtoLPageButton_clicked():
+        # set the currentIndex of the stacked widget to 0
+        ui.stackedWidget.setCurrentIndex(0)
+
+
+
+    # function to set airportButtonSelected to true if ANY airport button is selected
+    def airportButtons_clicked():
+        button = ui.MCOButton.isChecked() or ui.MIAButton.isChecked() or ui.JAXButton.isChecked()
+        #print("airport buttons set to:", button)
+        return button
+
+    # function to set airlineButtonSelected to true if ANY airline button is selected
+    def airlineButtons_clicked():
+        button = ui.SWButton.isChecked() or ui.UAButton.isChecked() or ui.AAButton.isChecked()
+        #print("airline buttons set to:", button)
+        return button
+        
+        
+
+    ui.LtoRPageButton.clicked.connect(LtoRPageButton_clicked)
+    ui.RtoLPageButton.clicked.connect(RtoLPageButton_clicked)
+
+    # if (ui.MCOButton.toggled):
+    #     airportIndex = 1
+    # elif(ui.MIAButton.toggled):
+    #     airportIndex = 2
+    # elif(ui.JAXButton.toggled):
+    #     airportIndex = 3
+    # else: airportIndex = 0
+    # print("airport id:", airportIndex)
+
+    # if (ui.SWButton.toggled):
+    #     airlineIndex = 1
+    # elif(ui.MIAButton.toggled):
+    #     airlineIndex = 2
+    # elif(ui.JAXButton.toggled):
+    #     airlineIndex = 3
+    # else: airlineIndex = 0
+    # print("airline id:", airportIndex)
+
+    ui.MCOButton.clicked.connect(airportButtons_clicked)
+    ui.MIAButton.clicked.connect(airportButtons_clicked)
+    ui.JAXButton.clicked.connect(airportButtons_clicked)
+
+    ui.SWButton.clicked.connect(airlineButtons_clicked)
+    ui.UAButton.clicked.connect(airlineButtons_clicked)
+    ui.AAButton.clicked.connect(airlineButtons_clicked)
+
     sys.exit(app.exec())

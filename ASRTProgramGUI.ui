@@ -602,7 +602,7 @@
           <enum>QFrame::Plain</enum>
          </property>
          <property name="text">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/Airports/airport logos/MCO.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/Airlines&amp;amp;Airports/airport logos/MCO.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
         <widget class="QLabel" name="MIALogo">
@@ -615,7 +615,7 @@
           </rect>
          </property>
          <property name="text">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/Airports/airport logos/MIA.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/Airlines&amp;amp;Airports/airport logos/MIA.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
         <widget class="QLabel" name="JAXLogo">
@@ -628,7 +628,7 @@
           </rect>
          </property>
          <property name="text">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/Airports/airport logos/JAX.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/Airlines&amp;amp;Airports/airport logos/JAX.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </widget>
@@ -745,7 +745,7 @@
           <enum>QFrame::Plain</enum>
          </property>
          <property name="text">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/Airlines/airline logos/Southwest.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/Airlines&amp;amp;Airports/airline logos/Southwest.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
         <widget class="QLabel" name="UALogo">
@@ -758,7 +758,7 @@
           </rect>
          </property>
          <property name="text">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/Airlines/airline logos/United.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/Airlines&amp;amp;Airports/airline logos/United.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
         <widget class="QLabel" name="AALogo">
@@ -771,72 +771,17 @@
           </rect>
          </property>
          <property name="text">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/Airlines/airline logos/American.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/Airlines&amp;amp;Airports/airline logos/American.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </widget>
       </widget>
-      <widget class="QTimeEdit" name="launchPageTime">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>430</y>
-         <width>151</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="readOnly">
-        <bool>true</bool>
-       </property>
-       <property name="buttonSymbols">
-        <enum>QAbstractSpinBox::NoButtons</enum>
-       </property>
-       <property name="date">
-        <date>
-         <year>2024</year>
-         <month>4</month>
-         <day>7</day>
-        </date>
-       </property>
-       <property name="currentSection">
-        <enum>QDateTimeEdit::HourSection</enum>
-       </property>
-       <property name="calendarPopup">
-        <bool>false</bool>
-       </property>
-      </widget>
-      <widget class="QDateEdit" name="launchPageDate">
-       <property name="geometry">
-        <rect>
-         <x>180</x>
-         <y>430</y>
-         <width>151</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="layoutDirection">
-        <enum>Qt::LeftToRight</enum>
-       </property>
-       <property name="readOnly">
-        <bool>true</bool>
-       </property>
-       <property name="buttonSymbols">
-        <enum>QAbstractSpinBox::NoButtons</enum>
-       </property>
-       <property name="time">
-        <time>
-         <hour>12</hour>
-         <minute>0</minute>
-         <second>0</second>
-        </time>
-       </property>
-      </widget>
       <widget class="QWidget" name="horizontalLayoutWidget">
        <property name="geometry">
         <rect>
-         <x>500</x>
+         <x>430</x>
          <y>430</y>
-         <width>161</width>
+         <width>301</width>
          <height>41</height>
         </rect>
        </property>
@@ -844,7 +789,7 @@
         <item>
          <widget class="QPushButton" name="LtoRPageButton">
           <property name="enabled">
-           <bool>false</bool>
+           <bool>true</bool>
           </property>
           <property name="sizePolicy">
            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -955,61 +900,6 @@
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QTimeEdit" name="resultsPageTime">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>430</y>
-         <width>151</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="readOnly">
-        <bool>true</bool>
-       </property>
-       <property name="buttonSymbols">
-        <enum>QAbstractSpinBox::NoButtons</enum>
-       </property>
-       <property name="date">
-        <date>
-         <year>2024</year>
-         <month>4</month>
-         <day>7</day>
-        </date>
-       </property>
-       <property name="currentSection">
-        <enum>QDateTimeEdit::HourSection</enum>
-       </property>
-       <property name="calendarPopup">
-        <bool>false</bool>
-       </property>
-      </widget>
-      <widget class="QDateEdit" name="resultsPageDate">
-       <property name="geometry">
-        <rect>
-         <x>180</x>
-         <y>430</y>
-         <width>151</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="layoutDirection">
-        <enum>Qt::LeftToRight</enum>
-       </property>
-       <property name="readOnly">
-        <bool>true</bool>
-       </property>
-       <property name="buttonSymbols">
-        <enum>QAbstractSpinBox::NoButtons</enum>
-       </property>
-       <property name="time">
-        <time>
-         <hour>12</hour>
-         <minute>0</minute>
-         <second>0</second>
-        </time>
-       </property>
-      </widget>
       <widget class="Line" name="resultsPageLine">
        <property name="geometry">
         <rect>
@@ -1072,7 +962,7 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>742</width>
+          <width>181</width>
           <height>476</height>
          </rect>
         </property>
@@ -1525,9 +1415,9 @@
       <widget class="QWidget" name="horizontalLayoutWidget_5">
        <property name="geometry">
         <rect>
-         <x>500</x>
+         <x>430</x>
          <y>430</y>
-         <width>161</width>
+         <width>301</width>
          <height>41</height>
         </rect>
        </property>
@@ -1535,7 +1425,7 @@
         <item>
          <widget class="QPushButton" name="RtoLPageButton">
           <property name="enabled">
-           <bool>false</bool>
+           <bool>true</bool>
           </property>
           <property name="sizePolicy">
            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -1589,8 +1479,8 @@
   </widget>
  </widget>
  <resources>
-  <include location="Resources/Logos.qrc"/>
-  <include location="Resources/Icons.qrc"/>
+  <include location="Logos.qrc"/>
+  <include location="Icons.qrc"/>
  </resources>
  <connections/>
 </ui>
