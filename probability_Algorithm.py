@@ -1,5 +1,4 @@
 import tensorflow as tf
-#from tensorflow import keras
 from keras import layers
 import numpy as np
 import pandas as pd
@@ -10,11 +9,8 @@ def training_function(newhistoricaldata, modelsavename, ytargetdata):
   arr_labels = historical_data.pop(ytargetdata) #Make a model for the total flights and total delayed flights and come up with a percentage value that determines if the flight will be delay based on the data and compare it to the current whether to verify.
   data_arr = np.array(historical_data)
   arr_labels2 = np.array(arr_labels)
-  #print(data_arr)
   normalized_arr = (data_arr - np.min(data_arr)) / (np.max(data_arr) - np.min(data_arr))
-  #print(normalized_arr)
   normalized_arr_labels = (arr_labels2 - np.min(arr_labels2)) / (np.max(arr_labels2) - np.min(arr_labels2))
-  #print(normalized_arr_labels)
   counter = 0
   while(counter < 1):
     if(counter == 0):
@@ -23,8 +19,6 @@ def training_function(newhistoricaldata, modelsavename, ytargetdata):
       flightDelay_model.fit(x=normalized_arr, y=normalized_arr_labels, epochs=20)
       flightDelay_model.save(modelsavename + '.keras')
     else:
-      #flightDelay_model = tf.keras.Sequential([layers.Dense(10), layers.Dense(60), layers.Dense(60), layers.Dense(1)])
-      #flightDelay_model.compile(loss=tf.keras.losses.BinaryCrossentropy(from_logits=True), optimizer=tf.keras.optimizers.Adam())
       loaded_model = tf.keras.models.load_model(modelsavename + '.keras')
       loaded_model.fit(x=normalized_arr, y=normalized_arr_labels, epochs=20)
       loaded_model.save(modelsavename + '.keras')
@@ -38,7 +32,6 @@ def runModel(loadModelName):
     for inner_arr in arr:
       count += abs(inner_arr)
   count /= arr
-  #print(abs(count))
   return count
 
 def probabilityCalc(modelsavenamex, modelsavenamey):
