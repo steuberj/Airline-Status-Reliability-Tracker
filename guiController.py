@@ -4,6 +4,7 @@ def startGui():
     import random
     import GUIBuilder
     import flightDataAPI as fdapi
+    import probability_Algorithm as pa
 
     # if __name__ == "__main__":
     #     import sys
@@ -90,22 +91,31 @@ def startGui():
 
         if airportIndex == 1 and airlineIndex == 1:
             strings = fdapi.flightdata("MCO", "SWA")
+            predictedstatus = pa.controlFunction('SWMCO_delmodel', 'SWMCO_arrmodel')
         elif airportIndex == 1 and airlineIndex == 2:
             strings = fdapi.flightdata("MCO", "DAL")
+            predictedstatus = pa.controlFunction('DLMCO_delmodel', 'DLMCO_arrmodel')
         elif airportIndex == 1 and airlineIndex == 3:
             strings = fdapi.flightdata("MCO", "AAL")
+            predictedstatus = pa.controlFunction('AAMCO_delmodel', 'AAMCO_arrmodel')
         elif airportIndex == 2 and airlineIndex == 1:
             strings = fdapi.flightdata("MIA", "SWA")
+            predictedstatus = pa.controlFunction('SWMIA_delmodel', 'SWMIA_arrmodel')
         elif airportIndex == 2 and airlineIndex == 2:
             strings = fdapi.flightdata("MIA", "DAL")
+            predictedstatus = pa.controlFunction('DLMIA_delmodel', 'DLMIA_arrmodel')
         elif airportIndex == 2 and airlineIndex == 3:
             strings = fdapi.flightdata("MIA", "AAL")
+            predictedstatus = pa.controlFunction('AAMIA_delmodel', 'AAMIA_arrmodel')
         elif airportIndex == 3 and airlineIndex == 1:
             strings = fdapi.flightdata("JAX", "SWA")
+            predictedstatus = pa.controlFunction('SWJAX_delmodel', 'SWJAX_arrmodel')
         elif airportIndex == 3 and airlineIndex == 2:
             strings = fdapi.flightdata("JAX", "DAL")
+            predictedstatus = pa.controlFunction('DLJAX_delmodel', 'DLJAX_arrmodel')
         elif airportIndex == 3 and airlineIndex == 3:
             strings = fdapi.flightdata("JAX", "AAL")
+            predictedstatus = pa.controlFunction('AAJAX_delmodel', 'AAJAX_arrmodel')
         
         ui.flight1GridLayout.setTitle(strings[0])
         ui.flight2GridLayout.setTitle(strings[5])
@@ -120,6 +130,7 @@ def startGui():
             ui.flight1ActualStatusMain.setText("Delayed")
         ui.flight1Destination.setText(strings[2])
         ui.flight1Distance.setText(strings[3] + "Mi")
+        ui.flight1PredictedStatusMain.setText(predictedstatus)
         
         ui.flight2Aircraft.setText(strings[6])
         if int(strings[9]) <= 0:
@@ -130,6 +141,7 @@ def startGui():
             ui.flight2ActualStatusMain.setText("Delayed")
         ui.flight2Destination.setText(strings[7])
         ui.flight2Distance.setText(strings[8] + "Mi")
+        ui.flight2PredictedStatusMain.setText(predictedstatus)
 
         ui.flight3Aircraft.setText(strings[11])
         if int(strings[14]) <= 0:
@@ -140,6 +152,7 @@ def startGui():
             ui.flight3ActualStatusMain.setText("Delayed")
         ui.flight3Destination.setText(strings[12])
         ui.flight3Distance.setText(strings[13] + "Mi")
+        ui.flight3PredictedStatusMain.setText(predictedstatus)
 
     def RtoLPageButton_clicked():
 

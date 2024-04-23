@@ -25,13 +25,15 @@ def training_function(newhistoricaldata, modelsavename, ytargetdata):
     counter += 1
 
 def runModel(loadModelName):
+  global data_arr
+  print (data_arr)
   final_model = tf.keras.models.load_model(loadModelName + '.keras')
   result = final_model.predict(data_arr)
   count = 0
   for arr in result:
     for inner_arr in arr:
       count += abs(inner_arr)
-  count /= arr
+  count /= abs(arr)
   return count
 
 def probabilityCalc(modelsavenamex, modelsavenamey):
@@ -40,12 +42,27 @@ def probabilityCalc(modelsavenamex, modelsavenamey):
   delayProbability = (averageDelays[0] / averageFlights[0]) * 100
   if delayProbability > 80:
     delayProbability /= 2.5
-    return('Probability: ' + str(delayProbability))
+    if delayProbability > 60:
+      return 'Delayed'
+    elif delayProbability > 45:
+      return 'Possible Delay'
+    else:
+      return 'On-Time'
   elif delayProbability > 50:
     delayProbability /= 2
-    return('Probability: ' + str(delayProbability))
+    if delayProbability > 60:
+      return 'Delayed'
+    elif delayProbability > 45:
+      return 'Possible Delay'
+    else:
+      return 'On Time'
   else:
-    return('Probability: ' + str(delayProbability))
+    if delayProbability > 60:
+      return 'Delayed'
+    elif delayProbability > 45:
+      return 'Possible Delay'
+    else:
+      return 'On Time'
 
 def controlFunction(modelSaveNamex, modelSaveNamey):
-  print(probabilityCalc(modelSaveNamex, modelSaveNamey))
+  return(probabilityCalc(modelSaveNamex, modelSaveNamey))
