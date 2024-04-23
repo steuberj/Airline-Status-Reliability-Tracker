@@ -23,16 +23,44 @@ if(user_input.lower() == "d"):
     ask_q = input("\nRun data preprocessing? (y/n)\n")
     if(ask_q.lower() == "y"):
         print("Running...")
-        rwd.modifyCSV
+        rwd.modifyCSV('Airline_Delay_Cause_DLJAX','New_Airline_Delay_Cause_DLJAX')
+        rwd.modifyCSV('Airline_Delay_Cause_DLMCO','New_Airline_Delay_Cause_DLMCO')
+        rwd.modifyCSV('Airline_Delay_Cause_DLMIA','New_Airline_Delay_Cause_DLMIA')
+        rwd.modifyCSV('Airline_Delay_Cause_AAJAX','New_Airline_Delay_Cause_AAJAX')
+        rwd.modifyCSV('Airline_Delay_Cause_AAMCO','New_Airline_Delay_Cause_AAMCO')
+        rwd.modifyCSV('Airline_Delay_Cause_AAMIA','New_Airline_Delay_Cause_AAMIA')
+        rwd.modifyCSV('Airline_Delay_Cause_SWJAX','New_Airline_Delay_Cause_SWJAX')
+        rwd.modifyCSV('Airline_Delay_Cause_SWMCO','New_Airline_Delay_Cause_SWMCO')
+        rwd.modifyCSV('Airline_Delay_Cause_SWMIA','New_Airline_Delay_Cause_SWMIA')
         print("Complete.")
     else:
         pass
 
     ask_q = input("\nInitialize Model Training? (y/n)\n")
     if(ask_q.lower() == "y"):
-        print("Initializing...")
-        pa.initial_training_function()
-        pa.loaded_training_function()
+        print("Running...")
+        
+        pa.training_function('New_Airline_Delay_Cause_DLJAX', 'DLJAX_delmodel', 'arr_del15')
+        pa.training_function('New_Airline_Delay_Cause_DLJAX', 'DLJAX_arrmodel', 'arr_flights')
+        pa.training_function('New_Airline_Delay_Cause_DLMCO', 'DLMCO_delmodel', 'arr_del15')
+        pa.training_function('New_Airline_Delay_Cause_DLMCO', 'DLMCO_arrmodel', 'arr_flights')
+        pa.training_function('New_Airline_Delay_Cause_DLMIA', 'DLMIA_delmodel', 'arr_del15')
+        pa.training_function('New_Airline_Delay_Cause_DLMIA', 'DLMIA_arrmodel', 'arr_flights')
+        pa.training_function('New_Airline_Delay_Cause_AAJAX', 'AAJAX_delmodel', 'arr_del15')
+        pa.training_function('New_Airline_Delay_Cause_AAJAX', 'AAJAX_arrmodel', 'arr_flights')
+        pa.training_function('New_Airline_Delay_Cause_AAMCO', 'AAMCO_delmodel', 'arr_del15')
+        pa.training_function('New_Airline_Delay_Cause_AAMCO', 'AAMCO_arrmodel', 'arr_flights')
+        pa.training_function('New_Airline_Delay_Cause_AAMIA', 'AAMIA_delmodel', 'arr_del15')
+        pa.training_function('New_Airline_Delay_Cause_AAMIA', 'AAMIA_arrmodel', 'arr_flights')
+        pa.training_function('New_Airline_Delay_Cause_SWJAX', 'SWJAX_delmodel', 'arr_del15')
+        pa.training_function('New_Airline_Delay_Cause_SWJAX', 'SWJAX_armodel', 'arr_flights')
+        pa.training_function('New_Airline_Delay_Cause_SWMCO', 'SWMCO_delmodel', 'arr_del15')
+        pa.training_function('New_Airline_Delay_Cause_SWMCO', 'SWMCO_arrmodel', 'arr_flights')
+        pa.training_function('New_Airline_Delay_Cause_SWMIA', 'SWMIA_delmodel', 'arr_del15')
+        pa.training_function('New_Airline_Delay_Cause_SWMIA', 'SWMIA_arrmodel', 'arr_flights')
+        
+        #pa.controlFunction('DLJAX_delmodel', 'DLJAX_arrmodel')
+        print("Complete.")
     else:
         pass
 
@@ -40,6 +68,14 @@ if(user_input.lower() == "d"):
     if(ask_q.lower() == "y"):
         print("Running...")
         wapi.weatherCheck(input("Enter a city: "))
+        print("Complete.")
+    else:
+        pass
+
+    ask_q = input("\nCheck Flight Data? (y/n)\n")
+    if(ask_q.lower() == "y"):
+        print("Running...")
+        fapi.flightdata()
         print("Complete.")
     else:
         pass

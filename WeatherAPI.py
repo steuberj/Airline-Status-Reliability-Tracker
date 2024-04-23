@@ -1,4 +1,3 @@
-import datetime as datetime
 import requests
 
 def weatherCheck(cityName):
@@ -12,16 +11,14 @@ def weatherCheck(cityName):
         return celsius, fahrenhiet
 
     url = BASE_URL + "appid=" + API_KEY + "&q=" + CITY
-
     response = requests.get(url).json()
-
     temp_kelvin = response['main']['temp']
     temp_celsius, temp_fahrenheit = kelvin_to_celsius_fahrenheit(temp_kelvin)
     flk = response['main']['feels_like']
     flc, flf = kelvin_to_celsius_fahrenheit(flk)
     humidity = response['main']['humidity']
     description = response['weather'][0]['description']
-
+    
     print(f"Temperature in {CITY}: {temp_celsius:.2f}C or {temp_fahrenheit:.2f}F")
     print(f"Temperature in {CITY} feels like: {flc:.2f}C or {flf:.2f}F")
     print(f"humidity in {CITY}: {humidity:.2F}%")
