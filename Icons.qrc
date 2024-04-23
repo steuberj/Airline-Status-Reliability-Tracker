@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="Basic">
+    <file>misc logos/airplane.png</file>
+  </qresource>
+</RCC>
