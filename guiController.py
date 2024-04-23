@@ -76,7 +76,7 @@ def startGui():
 
         if (ui.SWButton.isChecked()):
             airlineIndex = 1
-        elif(ui.UAButton.isChecked()):
+        elif(ui.DAButton.isChecked()):
             airlineIndex = 2
         elif(ui.AAButton.isChecked()):
             airlineIndex = 3
@@ -157,7 +157,7 @@ def startGui():
     # function to set airlineButtonSelected to true if ANY airline button is selected
     def airlineButtons_clicked():
 
-        button = ui.SWButton.isChecked() or ui.UAButton.isChecked() or ui.AAButton.isChecked()
+        button = ui.SWButton.isChecked() or ui.DAButton.isChecked() or ui.AAButton.isChecked()
         #print("airline buttons set to:", button)
         return button
 
@@ -165,7 +165,7 @@ def startGui():
 
         # Check if both an airport and an airline radio button are checked
         airportChecked = ui.MCOButton.isChecked() or ui.MIAButton.isChecked() or ui.JAXButton.isChecked()
-        airlineChecked = ui.SWButton.isChecked() or ui.UAButton.isChecked() or ui.AAButton.isChecked()
+        airlineChecked = ui.SWButton.isChecked() or ui.DAButton.isChecked() or ui.AAButton.isChecked()
 
         # Enable LtoRPageButton if both an airport and an airline radio button are checked, disable it otherwise
         ui.LtoRPageButton.setEnabled(airportChecked and airlineChecked)
@@ -207,7 +207,7 @@ def startGui():
     ui.JAXButton.clicked.connect(airportButtons_clicked)
 
     ui.SWButton.clicked.connect(airlineButtons_clicked)
-    ui.UAButton.clicked.connect(airlineButtons_clicked)
+    ui.DAButton.clicked.connect(airlineButtons_clicked)
     ui.AAButton.clicked.connect(airlineButtons_clicked)
 
     ui.MCOButton.clicked.connect(checkButtons)
@@ -215,7 +215,7 @@ def startGui():
     ui.JAXButton.clicked.connect(checkButtons)
 
     ui.SWButton.clicked.connect(checkButtons)
-    ui.UAButton.clicked.connect(checkButtons)
+    ui.DAButton.clicked.connect(checkButtons)
     ui.AAButton.clicked.connect(checkButtons)
 
 
@@ -258,7 +258,7 @@ def startGui():
     #     ui.JAXButton.clicked.connect(airportButtons_clicked)
 
     #     ui.SWButton.clicked.connect(airlineButtons_clicked)
-    #     ui.UAButton.clicked.connect(airlineButtons_clicked)
+    #     ui.DAButton.clicked.connect(airlineButtons_clicked)
     #     ui.AAButton.clicked.connect(airlineButtons_clicked)
 
     #     ui.MCOButton.clicked.connect(checkButtons)
@@ -266,7 +266,7 @@ def startGui():
     #     ui.JAXButton.clicked.connect(checkButtons)
 
     #     ui.SWButton.clicked.connect(checkButtons)
-    #     ui.UAButton.clicked.connect(checkButtons)
+    #     ui.DAButton.clicked.connect(checkButtons)
     #     ui.AAButton.clicked.connect(checkButtons)
 
 
