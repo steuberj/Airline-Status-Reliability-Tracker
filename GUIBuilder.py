@@ -626,13 +626,3 @@ class Ui_MainWindow(object):
         self.flight2Aircraft.setText(_translate("MainWindow", "Aircraft"))
         self.RtoLPageButton.setText(_translate("MainWindow", "Return"))
         self.RtoLPageButton.setShortcut(_translate("MainWindow", "Space"))
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
-    sys.exit(app.exec())

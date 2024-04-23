@@ -684,7 +684,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QRadioButton" name="UAButton">
+          <widget class="QRadioButton" name="DAButton">
            <property name="font">
             <font>
              <family>Glacial Indifference</family>
@@ -692,7 +692,7 @@
             </font>
            </property>
            <property name="text">
-            <string>United Airlines</string>
+            <string>Delta Airlines</string>
            </property>
           </widget>
          </item>
@@ -748,7 +748,7 @@
           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/Airlines&amp;amp;Airports/airline logos/Southwest.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
-        <widget class="QLabel" name="UALogo">
+        <widget class="QLabel" name="DALogo">
          <property name="geometry">
           <rect>
            <x>0</x>
@@ -758,7 +758,7 @@
           </rect>
          </property>
          <property name="text">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/Airlines&amp;amp;Airports/airline logos/United.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/Airlines&amp;amp;Airports/airline logos/Delta.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
         <widget class="QLabel" name="AALogo">
@@ -875,6 +875,7 @@
         <font>
          <family>Glacial Indifference</family>
          <pointsize>26</pointsize>
+         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
@@ -938,6 +939,7 @@
         <font>
          <family>Glacial Indifference</family>
          <pointsize>26</pointsize>
+         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
@@ -961,9 +963,9 @@
         <property name="geometry">
          <rect>
           <x>0</x>
-          <y>0</y>
-          <width>181</width>
-          <height>476</height>
+          <y>-156</y>
+          <width>738</width>
+          <height>485</height>
          </rect>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -1143,21 +1145,21 @@
                <item>
                 <layout class="QGridLayout" name="flight3DetailsGridLayout">
                  <item row="4" column="0">
-                  <widget class="QLabel" name="distanceLabel1_7">
+                  <widget class="QLabel" name="flight3Distance">
                    <property name="text">
                     <string>Distance</string>
                    </property>
                   </widget>
                  </item>
                  <item row="3" column="0">
-                  <widget class="QLabel" name="destinationLabel1_7">
+                  <widget class="QLabel" name="flight3Destination">
                    <property name="text">
                     <string>Destination</string>
                    </property>
                   </widget>
                  </item>
                  <item row="2" column="0">
-                  <widget class="QLabel" name="aircraftLabel1_7">
+                  <widget class="QLabel" name="flight3Aircraft">
                    <property name="text">
                     <string>Aircraft</string>
                    </property>
