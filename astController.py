@@ -60,7 +60,6 @@ if(user_input.lower() == "d"):
         pa.training_function('New_Airline_Delay_Cause_SWMIA', 'SWMIA_delmodel', 'arr_del15')
         pa.training_function('New_Airline_Delay_Cause_SWMIA', 'SWMIA_arrmodel', 'arr_flights')
         '''
-        print(pa.controlFunction('DLJAX_delmodel', 'DLJAX_arrmodel'))
         print("Complete.")
     else:
         pass
