@@ -86,7 +86,7 @@ if(user_input.lower() == "d"):
 elif(user_input.lower() == "u"):
     print("In User Mode")
     print("Running")
-    print("Complete")
+    
     pa.training_function('New_Airline_Delay_Cause_DLJAX', 'DLJAX_delmodel', 'arr_del15')
     pa.training_function('New_Airline_Delay_Cause_DLJAX', 'DLJAX_arrmodel', 'arr_flights')
     '''
@@ -107,6 +107,7 @@ elif(user_input.lower() == "u"):
     pa.training_function('New_Airline_Delay_Cause_SWMIA', 'SWMIA_delmodel', 'arr_del15')
     pa.training_function('New_Airline_Delay_Cause_SWMIA', 'SWMIA_arrmodel', 'arr_flights')
     '''
+    print("Complete")
     gui.startGui()
 else:
     print("Unknown Mode")
