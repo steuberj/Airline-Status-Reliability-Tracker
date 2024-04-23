@@ -6,7 +6,7 @@ import pandas as pd
 def training_function(newhistoricaldata, modelsavename, ytargetdata):
   global data_arr
   historical_data = pd.read_csv(newhistoricaldata + '.csv')
-  arr_labels = historical_data.pop(ytargetdata) #Make a model for the total flights and total delayed flights and come up with a percentage value that determines if the flight will be delay based on the data and compare it to the current whether to verify.
+  arr_labels = historical_data.pop(ytargetdata)
   data_arr = np.array(historical_data)
   arr_labels2 = np.array(arr_labels)
   normalized_arr = (data_arr - np.min(data_arr)) / (np.max(data_arr) - np.min(data_arr))
