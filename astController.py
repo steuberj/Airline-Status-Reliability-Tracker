@@ -1,6 +1,6 @@
 import read_write_data as rwd
 import probability_Algorithm as pa
-import weatherAPI as wapi
+import WeatherAPI as wapi
 import flightDataAPI as fapi
 
 verification = False

@@ -2,6 +2,7 @@ from PyQt6 import QtWidgets # type: ignore
 import Logos_rc, Icons_rc
 import random
 import GUIBuilder
+import flightDataAPI as fdapi
 
 # if __name__ == "__main__":
 #     import sys
@@ -85,20 +86,27 @@ def LtoRPageButton_clicked():
     #print("airport id:", airportIndex)
 
     # this code actuates the lie!!!!!!!!!!!!!!!!!!!!
-    strings = generate_strings(airlineIndex)
+    strings = fdapi.flightdata()
 
     ui.flight1GridLayout.setTitle(strings[0])
-    ui.flight2GridLayout.setTitle(strings[1])
-    ui.flight3GridLayout.setTitle(strings[2])
+    ui.flight2GridLayout.setTitle(strings[5])
+    ui.flight3GridLayout.setTitle(strings[10])
 
-    aircraft = select_aircraft()
-    ui.flight1Aircraft.setText(aircraft)
+    
+    ui.flight1Aircraft.setText(strings[1])
+    ui.flight1ActualStatusMain.setText(strings[4])
+    ui.flight1Destination.setText(strings[2])
+    ui.flight1Distance.setText(strings[3] + "Mi")
+    
+    ui.flight2Aircraft.setText(strings[6])
+    ui.flight2ActualStatusMain.setText(strings[9])
+    ui.flight2Destination.setText(strings[7])
+    ui.flight2Distance.setText(strings[8] + "Mi")
 
-    aircraft = select_aircraft()
-    ui.flight2Aircraft.setText(aircraft)
-
-    aircraft = select_aircraft()
-    ui.flight3Aircraft.setText(aircraft)
+    ui.flight3Aircraft.setText(strings[11])
+    ui.flight3ActualStatusMain.setText(strings[14])
+    ui.flight3Destination.setText(strings[12])
+    ui.flight3Distance.setText(strings[13] + "Mi")
 
 def RtoLPageButton_clicked():
 
