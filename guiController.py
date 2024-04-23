@@ -271,4 +271,3 @@ def startGui():
 
 
     #     sys.exit(app.exec())
-startGui()
