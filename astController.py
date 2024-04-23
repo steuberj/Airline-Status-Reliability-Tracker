@@ -40,9 +40,9 @@ if(user_input.lower() == "d"):
     ask_q = input("\nInitialize Model Training? (y/n)\n")
     if(ask_q.lower() == "y"):
         print("Running...")
-        
         pa.training_function('New_Airline_Delay_Cause_DLJAX', 'DLJAX_delmodel', 'arr_del15')
         pa.training_function('New_Airline_Delay_Cause_DLJAX', 'DLJAX_arrmodel', 'arr_flights')
+        '''
         pa.training_function('New_Airline_Delay_Cause_DLMCO', 'DLMCO_delmodel', 'arr_del15')
         pa.training_function('New_Airline_Delay_Cause_DLMCO', 'DLMCO_arrmodel', 'arr_flights')
         pa.training_function('New_Airline_Delay_Cause_DLMIA', 'DLMIA_delmodel', 'arr_del15')
@@ -59,8 +59,8 @@ if(user_input.lower() == "d"):
         pa.training_function('New_Airline_Delay_Cause_SWMCO', 'SWMCO_arrmodel', 'arr_flights')
         pa.training_function('New_Airline_Delay_Cause_SWMIA', 'SWMIA_delmodel', 'arr_del15')
         pa.training_function('New_Airline_Delay_Cause_SWMIA', 'SWMIA_arrmodel', 'arr_flights')
-        
-        #pa.controlFunction('DLJAX_delmodel', 'DLJAX_arrmodel')
+        '''
+        print(pa.controlFunction('DLJAX_delmodel', 'DLJAX_arrmodel'))
         print("Complete.")
     else:
         pass
@@ -86,7 +86,27 @@ if(user_input.lower() == "d"):
 elif(user_input.lower() == "u"):
     print("In User Mode")
     print("Running")
-    gui.startGui()
     print("Complete")
+    pa.training_function('New_Airline_Delay_Cause_DLJAX', 'DLJAX_delmodel', 'arr_del15')
+    pa.training_function('New_Airline_Delay_Cause_DLJAX', 'DLJAX_arrmodel', 'arr_flights')
+    '''
+    pa.training_function('New_Airline_Delay_Cause_DLMCO', 'DLMCO_delmodel', 'arr_del15')
+    pa.training_function('New_Airline_Delay_Cause_DLMCO', 'DLMCO_arrmodel', 'arr_flights')
+    pa.training_function('New_Airline_Delay_Cause_DLMIA', 'DLMIA_delmodel', 'arr_del15')
+    pa.training_function('New_Airline_Delay_Cause_DLMIA', 'DLMIA_arrmodel', 'arr_flights')
+    pa.training_function('New_Airline_Delay_Cause_AAJAX', 'AAJAX_delmodel', 'arr_del15')
+    pa.training_function('New_Airline_Delay_Cause_AAJAX', 'AAJAX_arrmodel', 'arr_flights')
+    pa.training_function('New_Airline_Delay_Cause_AAMCO', 'AAMCO_delmodel', 'arr_del15')
+    pa.training_function('New_Airline_Delay_Cause_AAMCO', 'AAMCO_arrmodel', 'arr_flights')
+    pa.training_function('New_Airline_Delay_Cause_AAMIA', 'AAMIA_delmodel', 'arr_del15')
+    pa.training_function('New_Airline_Delay_Cause_AAMIA', 'AAMIA_arrmodel', 'arr_flights')
+    pa.training_function('New_Airline_Delay_Cause_SWJAX', 'SWJAX_delmodel', 'arr_del15')
+    pa.training_function('New_Airline_Delay_Cause_SWJAX', 'SWJAX_armodel', 'arr_flights')
+    pa.training_function('New_Airline_Delay_Cause_SWMCO', 'SWMCO_delmodel', 'arr_del15')
+    pa.training_function('New_Airline_Delay_Cause_SWMCO', 'SWMCO_arrmodel', 'arr_flights')
+    pa.training_function('New_Airline_Delay_Cause_SWMIA', 'SWMIA_delmodel', 'arr_del15')
+    pa.training_function('New_Airline_Delay_Cause_SWMIA', 'SWMIA_arrmodel', 'arr_flights')
+    '''
+    gui.startGui()
 else:
     print("Unknown Mode")
