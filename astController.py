@@ -2,6 +2,7 @@ import read_write_data as rwd
 import probability_Algorithm as pa
 import WeatherAPI as wapi
 import flightDataAPI as fapi
+import guiController as gui
 
 verification = False
 
@@ -75,15 +76,17 @@ if(user_input.lower() == "d"):
     ask_q = input("\nCheck Flight Data? (y/n)\n")
     if(ask_q.lower() == "y"):
         print("Running...")
-        fapi.flightdata()
+        askq_1 = input("Enter Airport Code: ")
+        askq_2 = input("Enter Airline Code: ")
+        print(fapi.flightdata(askq_1, askq_2))
         print("Complete.")
     else:
         pass
 
 elif(user_input.lower() == "u"):
     print("In User Mode")
-
-    #Starts GUI and will access files as needed
-
+    print("Running")
+    gui.startGui()
+    print("Complete")
 else:
     print("Unknown Mode")
