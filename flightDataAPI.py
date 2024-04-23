@@ -5,7 +5,7 @@ def flightdata():
     aeroapi = aeroapi_python.AeroAPI(api_key)
     airports = aeroapi.airports
     airport_info = airports.scheduled_arrivals("MIA", "DAL")
-    #print(airport_info)
+    #print(airport_info
     #print(airport_info.keys())
   
     for item in airport_info['scheduled_arrivals']:
