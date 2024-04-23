@@ -112,17 +112,32 @@ def startGui():
         ui.flight3GridLayout.setTitle(strings[10])
         
         ui.flight1Aircraft.setText(strings[1])
-        ui.flight1ActualStatusMain.setText(strings[4])
+        if int(strings[4]) <= 0:
+            ui.flight1ActualStatusMain.setText("On Time")
+        elif int(strings[4]) >= 500:
+            ui.flight1ActualStatusMain.setText("Major Delay")
+        else:
+            ui.flight1ActualStatusMain.setText("Delayed")
         ui.flight1Destination.setText(strings[2])
         ui.flight1Distance.setText(strings[3] + "Mi")
         
         ui.flight2Aircraft.setText(strings[6])
-        ui.flight2ActualStatusMain.setText(strings[9])
+        if int(strings[9]) <= 0:
+            ui.flight2ActualStatusMain.setText("On Time")
+        elif int(strings[9]) >= 500:
+            ui.flight2ActualStatusMain.setText("Major Delay")
+        else:
+            ui.flight2ActualStatusMain.setText("Delayed")
         ui.flight2Destination.setText(strings[7])
         ui.flight2Distance.setText(strings[8] + "Mi")
 
         ui.flight3Aircraft.setText(strings[11])
-        ui.flight3ActualStatusMain.setText(strings[14])
+        if int(strings[14]) <= 0:
+            ui.flight3ActualStatusMain.setText("On Time")
+        elif int(strings[14]) >= 500:
+            ui.flight3ActualStatusMain.setText("Major Delay")
+        else:
+            ui.flight3ActualStatusMain.setText("Delayed")
         ui.flight3Destination.setText(strings[12])
         ui.flight3Distance.setText(strings[13] + "Mi")
 
@@ -256,3 +271,4 @@ def startGui():
 
 
     #     sys.exit(app.exec())
+startGui()
