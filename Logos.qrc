@@ -1,12 +1,10 @@
 <RCC>
-  <qresource prefix="Airlines">
-    <file>airline logos/American.png</file>
-    <file>airline logos/Southwest.png</file>
-    <file>airline logos/United.png</file>
-  </qresource>
-  <qresource prefix="Airports">
+  <qresource prefix="Airlines&amp;Airports">
     <file>airport logos/JAX.png</file>
     <file>airport logos/MCO.png</file>
     <file>airport logos/MIA.png</file>
+    <file>airline logos/American.png</file>
+    <file>airline logos/Southwest.png</file>
+    <file>airline logos/United.png</file>
   </qresource>
 </RCC>
