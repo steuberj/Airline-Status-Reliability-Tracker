@@ -26,7 +26,6 @@ def training_function(newhistoricaldata, modelsavename, ytargetdata):
 
 def runModel(loadModelName):
   global data_arr
-  print (data_arr)
   final_model = tf.keras.models.load_model(loadModelName + '.keras')
   result = final_model.predict(data_arr)
   count = 0
