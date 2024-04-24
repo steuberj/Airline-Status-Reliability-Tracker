@@ -10,7 +10,11 @@ This program was developed as part of the Embry-Riddle Aeronautical University S
 > Cameron S.
 
 ## Usage
-Uhhhhhh
+You will need to install several modules through pip before you are able to run the program.  These modules include:
+`tensorflow`
+`Pandas`
+`PyQt6`
+`aeroapi_python`
 ## Links
 (Editable) [Software Development Documentation](https://myerauedu-my.sharepoint.com/:w:/g/personal/steuberj_my_erau_edu/EUVvoL4-ltdLpssyMnaoqDYBoGtfcHl1dJMZszGmybVeTw?e=EbHI93 "https://myerauedu-my.sharepoint.com/:w:/g/personal/steuberj_my_erau_edu/EUVvoL4-ltdLpssyMnaoqDYBoGtfcHl1dJMZszGmybVeTw?e=EbHI93")
 ## Resources
