@@ -16,7 +16,7 @@ You will need to install several modules through pip before you are able to run 
 `PyQt6`
 `aeroapi_python`
 ## Links
-(Editable) [Software Development Documentation](https://myerauedu-my.sharepoint.com/:w:/g/personal/steuberj_my_erau_edu/EUVvoL4-ltdLpssyMnaoqDYBoGtfcHl1dJMZszGmybVeTw?e=EbHI93 "https://myerauedu-my.sharepoint.com/:w:/g/personal/steuberj_my_erau_edu/EUVvoL4-ltdLpssyMnaoqDYBoGtfcHl1dJMZszGmybVeTw?e=EbHI93")
+(Editable) [Software Development Documentation](https://myerauedu-my.sharepoint.com/:w:/g/personal/steuberj_my_erau_edu/EYvoQNTxkgFJkLx0au-UOOwBQ6WxDHJTntgkBsuOsgFkaQ?e=Ii6EkC)
 ## Resources
 
  - QtDesigner
